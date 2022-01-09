@@ -3,7 +3,7 @@
 This is a erc20 smart contract with purchase functionality, implemented to represent the purchasing and selling of tickets
 in a fair & transparent manner. Because this contract implements the basic ERC20 smart contract, the documentation will only cover 
 the functionality that is built on top of the ERC20 contract. This smart contract allows for both ticket classes that have seats and 
-tickets that don't have seats. The ticket type can be declared in the constructor. There is a seperate smart contract standard to manage events with seats.
+tickets that don't have seats. The ticket type can be declared in the constructor. There is a seperate smart contract standard to manage events without seats.
 
 ## Verification
 
