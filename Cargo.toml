@@ -1,24 +1,19 @@
 [package]
-wasm-opt = false
-
 name = "erc20"
-version = "3.0.0-rc3"
+version = "3.0.0-rc7"
 authors = ["Parity Technologies <admin@parity.io>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-ink_primitives = { version = "3.0.0-rc3", default-features = false }
-ink_metadata = { version = "3.0.0-rc3", default-features = false, features = ["derive"], optional = true }
-ink_env = { version = "3.0.0-rc3",  default-features = false }
-ink_storage = { version = "3.0.0-rc3",  default-features = false }
-ink_lang = { version = "3.0.0-rc3", default-features = false }
-ink_prelude = { version = "3.0.0-rc3", default-features = false }
+ink_primitives = { version = "3.0.0-rc7", default-features = false }
+ink_metadata = { version = "3.0.0-rc7", default-features = false, features = ["derive"], optional = true }
+ink_env = { version = "3.0.0-rc7", default-features = false }
+ink_storage = { version = "3.0.0-rc7",default-features = false }
+ink_lang = { version = "3.0.0-rc7", default-features = false }
+ink_prelude = { version = "3.0.0-rc7", default-features = false }
 
-scale = { package = "parity-scale-codec", version = "2.0", default-features = false, features = ["derive"] }
-scale-info = { version = "1.0.0", default-features = false, features = ["derive"], optional = true }
-
-# Should be removed once bitvecto-rs/bitvec#105 is resolved
-funty = "=1.1.0"
+scale = { package = "parity-scale-codec", version = "2", default-features = false, features = ["derive"] }
+scale-info = { version = "1", default-features = false, features = ["derive"], optional = true }
 
 [lib]
 name = "erc20"
@@ -39,3 +34,9 @@ std = [
     "scale-info/std",
 ]
 ink-as-dependency = []
+ink-experimental-engine = ["ink_env/ink-experimental-engine"]
+# overflow-checks= false
+
+[profile.release]
+overflow-checks = false
+
